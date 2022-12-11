@@ -1,0 +1,42 @@
+<mat-card class="filter-form">
+
+  <!-- title` -->
+  <mat-card-header  class=" filter-form__header">
+    <mat-card-title>
+      <div class="justify-content-center header_title">
+        FILTERS
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <!-- form` -->
+  <form [formGroup]="filterForm" class="filter-form__body">
+    <div *ngFor="let filter of filters">
+
+      <!-- text fields -->
+      <mat-form-field *ngIf="filter.type === 'text'">
+        <input matInput placeholder="{{filter.title}}" formControlName="{{filter.title}}" type="{{filter.type}}">
+      </mat-form-field>
+
+      <!-- dropdown fields` -->
+      <mat-form-field *ngIf="filter.type === 'dropdown'">
+        <mat-select formControlName="{{filter.title}}" placeholder="{{filter.title}}" id="{{filter.title}}">
+          <mat-option *ngFor="let country of countries"
+            value="{{country.Alpha3Code}}">{{country.Alpha3Code}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- datepicker -->
+      <mat-form-field *ngIf="filter.type === 'date'">
+      <input formControlName="{{filter.title}}" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <!-- TODO use moment to adjust date format -->
+    </div>
+    <!-- TODO add icon -->
+    <button (click)="submitForm()" type="submit" class="btn btn-primary">
+      <span>Filter</span>
+    </button>
+  </form>
+</mat-card>

@@ -20,7 +20,7 @@ const  superHeroes : Superhero[] = [
     },
     {
         "name":"kathryn Murphy",
-        "phone":"111",
+        "phone":"155511",
         "email":"kat@example.com",
         "date":"12/11/1994",
         "country":"sa",
@@ -29,7 +29,7 @@ const  superHeroes : Superhero[] = [
     },
     {
         "name":"kathryn2 Murphy",
-        "phone":"111",
+        "phone":"2244444777111",
         "email":"kat@example.com",
         "date":"12/11/1994",
         "country":"sa",

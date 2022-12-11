@@ -1,0 +1,74 @@
+<div class="row">
+  <!-- filter form  -->
+  <div *ngIf="showFilter" class="col-md-3">
+    <app-superhero-filter></app-superhero-filter>
+  </div>
+
+  <!-- table list heroes -->
+  <div [ngClass]="showFilter ? 'col-md-9' : 'col-md-12'">
+    <!-- search and filter section -->
+    <div (click)="showFilter=!showFilter" class="d-flex header ">
+      <div class="mr-auto p-2">Heroes</div>
+      <div class="ml-auto p-2">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <!-- table -->
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+      class="mat-elevation-z8">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name" class="right-border">
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element" class="right-border"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Phone Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef class=" left-padding right-border">
+          Phone
+        </th>
+        <td class="left-padding " mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th class="left-padding right-border" mat-header-cell *matHeaderCellDef>
+          Email
+        </th>
+        <td class="left-padding right-border" mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th class="left-padding right-border" mat-header-cell *matHeaderCellDef>
+          Date
+        </th>
+        <td class="left-padding" mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <!-- Country Column -->
+      <ng-container matColumnDef="country">
+        <th class="left-padding right-border" mat-header-cell *matHeaderCellDef>
+          Country
+        </th>
+        <td class="left-padding" mat-cell *matCellDef="let element"> {{element.country}} </td>
+      </ng-container>
+
+      <!-- Company Column -->
+      <ng-container matColumnDef="company">
+        <th class="left-padding right-border" mat-header-cell *matHeaderCellDef>
+          Company
+        </th>
+        <td class="left-padding" mat-cell *matCellDef="let element"> {{element.company}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.filter-form {
+  background-color: white;
+
+  &__body {
+    text-align: center;
+  }
+
+  &__headder {
+
+    font-weight: bold;
+    border-bottom: 2px solid rgb(212, 212, 212);
+    margin-bottom: 2rem;
+
+    &_title {
+      padding: 3rem 2rem;
+      font-size: 40px;
+
+    }
+
+  }
+
+}
+
+// angular mat classes
+.mat-card-header {
+  display: flex;
+  flex-direction: initial;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.mat-form-field {
+
+  width: -webkit-fill-available;
+}

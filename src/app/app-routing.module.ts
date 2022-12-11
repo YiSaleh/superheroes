@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SuperheroListComponent } from './superhero-list/superhero-list.component';
+import { SuperheroListComponent } from './components/superhero-list/superhero-list.component';
 
 
 const routes: Routes = [
-  {
-    path:'all-superheroes', component:SuperheroListComponent
-  },
+  { path:'', component:SuperheroListComponent},
+  {path:'all-superheroes', component:SuperheroListComponent},
 
-  // { path: '**', redirectTo: 'error/404' },
 ];
 
 @NgModule({
