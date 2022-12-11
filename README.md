@@ -1,5 +1,11 @@
 # Sary
 
+## My Todo list
+-ui enhancements (to be pixil perfect with the design provided)
+-filter the table based on the filter form data by sharing the data through input, output or a shared service.
+-use moment to adjust date format
+-
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Development server
